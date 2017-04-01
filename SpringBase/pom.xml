@@ -8,4 +8,19 @@
   <groupId>com.base.spring</groupId>
   <artifactId>SpringBase</artifactId>
   <packaging>war</packaging>
+  
+  <properties>
+  	<spring.version>4.2.9.RELEASE</spring.version>
+  </properties>
+  
+  
+	<dependencies>
+	    <dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>spring-context</artifactId>
+	        <version>${spring.version}</version>
+	    </dependency>
+	</dependencies>  
+  
+  
 </project>
