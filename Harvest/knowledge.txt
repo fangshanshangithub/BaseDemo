@@ -1,0 +1,6 @@
+1、src/main/resources和src/test/resources 文件夹中如果有同名同路径的文件：
+	例如：src/main/resources/conf/file1.txt和src/test/resources/conf/file1.txt
+	则通过Spring 中的 Resource res2 = new ClassPathResource("conf/file1.txt");
+	调用时如果 存在“Resource res2 = new ClassPathResource("conf/file1.txt");”的代码的java文件在src/main/java中，
+	调用的是src/main/resources中的文件，同理在src/test/java中 调用的是src/test/resources中的文件
+	     
