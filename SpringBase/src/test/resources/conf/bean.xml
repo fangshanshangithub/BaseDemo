@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-       <bean id="car1" class="com.test.spring.Car" 
+       <bean id="car" name="car1,cc" class="com.test.spring.Car" 
        p:bind="bbbbbbbbbb" 
        p:color="ccccccccccc" 
        p:maxspeed="mmmmmmmmmmmmmmmm"

@@ -13,7 +13,7 @@ public class BeanFactoryTest {
 		BeanFactory bf = new XmlBeanFactory(res);
 		System.out.println("init BeanFactory !!");
 		
-		Car car = bf.getBean("car1",Car.class);
+		Car car = bf.getBean("cc",Car.class);
 		System.out.println(car.toString());
 	}
 }
