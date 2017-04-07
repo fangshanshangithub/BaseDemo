@@ -13,5 +13,27 @@
        p:color="ccccccccccc" 
        p:maxspeed="mmmmmmmmmmmmmmmm"
        />
+       
+       <bean class="com.test.spring.Car" 
+       p:bind="111" 
+       p:color="111111" 
+       p:maxspeed="111111111"
+       />
+       <bean class="com.test.spring.Car" 
+       p:bind="222" 
+       p:color="222222" 
+       p:maxspeed="222222222"
+       />
+       <bean class="com.test.spring.Car" 
+       p:bind="333" 
+       p:color="333333" 
+       p:maxspeed="333333333"
+       />
+       
+       <bean id="foo" class="com.test.spring.Foo">
+       		<property name="iDCode">
+       			<value>sfdsfsf</value>
+       		</property>
+       </bean>                     
         
 </beans>
