@@ -11,14 +11,20 @@ public class BeanFactoryTest {
 		ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
 		Resource res = resolver.getResource("classpath:conf/bean.xml");
 		BeanFactory bf = new XmlBeanFactory(res);
+		
+		
 		beanMethods(bf);
 		
 		moreBeanMethod(bf);
 		
+		fooMethod(bf);
+		
+	}
+
+	private static void fooMethod(BeanFactory bf) {
 		System.out.println("###############################");
 		Foo foo = bf.getBean("foo",Foo.class);
 		System.out.println(foo.toString());
-		
 	}
 
 	private static void moreBeanMethod(BeanFactory bf) {
