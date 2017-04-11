@@ -12,12 +12,11 @@ public class BeanFactoryTest {
 		Resource res = resolver.getResource("classpath:conf/bean.xml");
 		BeanFactory bf = new XmlBeanFactory(res);
 		
-		
 		beanMethods(bf);
-		
 		moreBeanMethod(bf);
-		
 		fooMethod(bf);
+		
+		System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
 		
 	}
 
