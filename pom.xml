@@ -6,6 +6,7 @@
   <packaging>pom</packaging>
   <modules>
   	<module>SpringBase</module>
+  	<module>JavaBase</module>
   </modules>
   
 <build>  
