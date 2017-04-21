@@ -19,12 +19,12 @@ class Ticket implements Runnable {
 	public synchronized void run() {
 		while(true){
 			if(ticketCount > 0) {
-				try {
+				/*try {
 					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}
+				}*/
 				 ticketCount--;
 				 System.out.println("当前剩余票：" + ticketCount + "--" + Thread.currentThread().getName());
 			
