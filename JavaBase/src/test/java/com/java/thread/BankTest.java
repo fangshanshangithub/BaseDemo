@@ -29,6 +29,7 @@ class BankThread extends Thread {
 	public void run() {
 		for(int i = 0; i < 3; i++) {
 			bank.add(100);
+			System.out.println(Thread.currentThread().getName() + "：" + bank.getSum());
 		}
 	}
 	
@@ -43,6 +44,16 @@ class Bank {
 		sum  = sum + count;
 		System.out.println(Thread.currentThread().getName() + "存入之后银行的钱：" + sum);
 	}
+
+	public static Integer getSum() {
+		return sum;
+	}
+
+	public static void setSum(Integer sum) {
+		Bank.sum = sum;
+	}
+	
+	
 	
 	
 }
