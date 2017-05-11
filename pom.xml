@@ -7,7 +7,15 @@
   <modules>
   	<module>JavaBase</module>
   	<module>HaboopBase</module>
+  	<module>SpringBase</module>
   </modules>
+
+
+  <properties>
+  	<spring.version>4.2.9.RELEASE</spring.version>
+  </properties>
+
+
   
 <build>  
     <plugins>  
