@@ -6,8 +6,8 @@
   <packaging>pom</packaging>
   <modules>
   	<module>JavaBase</module>
-  	<module>HaboopBase</module>
   	<module>SpringBase</module>
+  	<module>HadoopBase</module>
   </modules>
 
 
