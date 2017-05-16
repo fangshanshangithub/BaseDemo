@@ -15,6 +15,5 @@ class A {
 		
 	}
 	
-	public static 
 	
 }
