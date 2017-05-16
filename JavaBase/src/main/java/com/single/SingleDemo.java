@@ -7,21 +7,11 @@ public class SingleDemo {
 		
 	}
 }
-class A1Class {
-	public A1Class a1 = new A1Class();
-	
-	public  A1Class() {
-		
-	}
-	
-	
-}
 
-
-class AClass {
-	public AClass a1 = new AClass();
+class Aaa {
+	public Aaa a = new Aaa();
 	
-	public  AClass() {
+	public  Aaa() {
 		
 	}
 	
