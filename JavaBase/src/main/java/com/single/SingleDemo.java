@@ -8,10 +8,10 @@ public class SingleDemo {
 	}
 }
 
-class Aaa {
-	public Aaa a = new Aaa();
+class A1 {
+	public A1 a = new A1();
 	
-	public  Aaa() {
+	public  A1() {
 		
 	}
 	
