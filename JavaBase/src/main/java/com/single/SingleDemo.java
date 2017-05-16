@@ -1,6 +1,6 @@
 package com.single;
 
-public class SingleDemo1 {
+public class SingleDemo {
 
 	public static void main(String[] args) {
 		
@@ -15,6 +15,5 @@ class A {
 		
 	}
 	
-	public static 
 	
 }
