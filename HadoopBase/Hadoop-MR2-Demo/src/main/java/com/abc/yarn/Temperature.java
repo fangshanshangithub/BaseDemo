@@ -116,7 +116,7 @@ public class Temperature {
         //执行job，直到完成
         job.waitForCompletion(true);
         System.out.println("Finished");
- 
+  
     }
 
 }
