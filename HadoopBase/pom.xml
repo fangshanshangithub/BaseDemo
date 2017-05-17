@@ -4,10 +4,11 @@
     <groupId>com.base</groupId>
     <artifactId>BaseDemo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-  </parent> 
-  <artifactId>HaboopBase</artifactId>
+  </parent>
+  <artifactId>HadoopBase</artifactId>
+  <packaging>pom</packaging>
   
-  
+
   <properties>
   		<hadoop.version>2.7.3</hadoop.version>
   </properties>
@@ -56,4 +57,9 @@
         
   </dependencies>
   
+  
+  
+  <modules>
+  	<module>Hadoop-MR2-Demo</module>
+  </modules>
 </project>
