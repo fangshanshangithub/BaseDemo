@@ -87,7 +87,11 @@ public class Temperature {
     public static void main(String[] args) throws Exception {
     	Configuration hadoopConfig = new Configuration();
         //输入路径
-        String dst = "hdfs://192.168.10.120:9000/input.txt";
+        //String dst = "hdfs://192.168.10.120:9000/input.txt";
+    	
+    	// ecplise 测试
+        String dst = "input.txt";
+        
         //输出路径，必须是不存在的，空文件加也不行。
         //String dstOut = "hdfs://192.168.10.120:9000/output";
         
@@ -97,7 +101,7 @@ public class Temperature {
          * 可考虑在程序中加上如下代码，能在每次运行时自动删除输出目录，避免繁琐的命令行操作：
         */
         /* 删除输出目录  自动删除目录省去 手动删除*/
-        Path output = new Path(args[1]);
+        Path output = new Path("output/");
         output.getFileSystem(hadoopConfig).delete(output, true);
         
         
