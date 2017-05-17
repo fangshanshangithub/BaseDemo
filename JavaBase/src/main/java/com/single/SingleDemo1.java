@@ -1,6 +1,6 @@
 package com.single;
 
-public class SingleDemo {
+public class SingleDemo1 {
 
 	public static void main(String[] args) {
 		
@@ -8,10 +8,10 @@ public class SingleDemo {
 	}
 }
 
-class A1 {
-	public A1 a = new A1();
+class A {
+	public A a = new A();
 	
-	public  A1() {
+	public  A() {
 		
 	}
 	
