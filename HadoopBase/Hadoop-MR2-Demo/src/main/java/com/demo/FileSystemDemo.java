@@ -7,6 +7,5 @@ public class FileSystemDemo {
 	public static void main(String[] args) {
 		FileSystem fs = null;
 	}
-	
-	是非得失   是非得失
+	 
 }
