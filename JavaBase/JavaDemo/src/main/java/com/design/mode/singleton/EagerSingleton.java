@@ -1,7 +1,7 @@
 package com.design.mode.singleton;
 
 /**
- * 饿汉式 的单例模式
+ * 饱汉式[懒汉式] 的单例模式
  * 不存在 多线程同步问题，避免 synchronized造成的性能问题
  * 
  * @author Fangss
@@ -16,8 +16,8 @@ public class EagerSingleton {
 	并释放所占有的内存，因此在某些特定条件下会耗费内存。*/
 	private static EagerSingleton singleton = new EagerSingleton();
 	
-	//static 的 getSingleton 方法是便于通过 类名直接调用方法（EagerSingleton.getSingleton()）
-	public static EagerSingleton getSingleton() {
+	//static 的 getSingleton 方法是便于通过 类名直接调用方法（EagerSingleton.getSingleton()） 可以使用final 关键字修饰
+	public static final EagerSingleton getSingleton() {
 		return singleton;
 	}
 	
