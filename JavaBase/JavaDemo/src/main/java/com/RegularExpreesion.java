@@ -43,7 +43,7 @@ public class RegularExpreesion {
 	 */
 	private static void method_01(String value, Pattern pattern) {
 		System.out.println("原字符串：" + value);
-		pattern = Pattern.compile("");
+		pattern = Pattern.compile("/");
 		Matcher matcher = pattern.matcher(value);
 		
 		System.out.println(matcher.matches() + ";规则参数：" + pattern.pattern());

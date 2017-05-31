@@ -11,11 +11,11 @@
   </modules>
 
 
-  <properties>
+  <properties> 
   	<spring.version>4.2.9.RELEASE</spring.version>
   </properties>
 
-
+  
   
 <build>  
     <plugins>  
