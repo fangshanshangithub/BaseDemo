@@ -6,6 +6,6 @@
 <title>测试</title>
 </head>
 <body>
-
+	${user.id}--${user.userName}--${user.password}
 </body>
 </html>

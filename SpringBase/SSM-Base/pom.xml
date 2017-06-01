@@ -24,6 +24,19 @@
             <version>1.2.2</version>  
         </dependency>
         
+        <!--  在spring4.x中使用了org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+        	代替旧的MappingJacksonHttpMessageConverter。  -->
+       <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+        
   </dependencies>
   
   
