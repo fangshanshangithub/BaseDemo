@@ -1,0 +1,5 @@
+SSM-Base  
+	项目是基本的ＳＳＭ（Spring + SpringMvc + Mybatis）框架。
+	
+Spring-Aop 
+	Spring AOP 测试项目 
