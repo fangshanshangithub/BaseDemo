@@ -4,7 +4,7 @@
     <!-- 为避免项目间冲突，定义唯一的 webAppRootKey log4j 日志用到 -->
     <context-param>
         <param-name>webAppRootKey</param-name>
-        <param-value>SSM-Base</param-value>
+        <param-value>SSM-Base.root</param-value>
     </context-param>
     
     
