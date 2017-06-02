@@ -5,7 +5,8 @@
     <!-- Spring和mybatis的配置文件 -->  
     <context-param>  
         <param-name>contextConfigLocation</param-name>  
-        <param-value>classpath:spring-mybatis.xml</param-value>  
+        <!-- <param-value>classpath:spring-mybatis.xml</param-value>  注释这个 则 src/main/resources/spring-mybatis.xml 文件失效 -->
+        <param-value>classpath:spring/application-spring*.xml</param-value>  
     </context-param>  
     <!-- 编码过滤器  注意位置 否则会失效-->  
     <filter>  
