@@ -137,5 +137,6 @@
 	<modules>
 		<module>Spring-Aop</module>
 		<module>SSM-Base</module>
+		<module>SSM-Extend</module>
 	</modules>
 </project>
