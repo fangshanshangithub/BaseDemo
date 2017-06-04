@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.base</groupId>
+    <artifactId>SpringBase</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.base.ssm.extends</groupId>
+  <artifactId>SSM-Extend</artifactId>
+  <packaging>pom</packaging>
+  
+  
+  
+  
+  
+
+  <dependencies>
+        <!-- 阿里json 包 -->  
+        <dependency>  
+            <groupId>com.alibaba</groupId>  
+            <artifactId>fastjson</artifactId>  
+            <version>1.1.41</version>  
+        </dependency>  
+          <!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->  
+        <dependency>  
+            <groupId>commons-dbcp</groupId>  
+            <artifactId>commons-dbcp</artifactId>  
+            <version>1.2.2</version>  
+        </dependency>
+        
+        <!--  在spring4.x中使用了org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+        	代替旧的MappingJacksonHttpMessageConverter。  -->
+       <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+        
+  </dependencies>  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <modules>
+  	<module>Extend-core</module>
+  </modules>
+</project>
