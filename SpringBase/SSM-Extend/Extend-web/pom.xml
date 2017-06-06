@@ -8,4 +8,12 @@
   <groupId>com.base.ssm.extends.web</groupId>
   <artifactId>Extend-web</artifactId>
   <packaging>war</packaging>
+  
+  <dependencies>
+  	<dependency>
+  	  <groupId>com.base.ssm.extends.core</groupId>
+  	  <artifactId>Extend-core</artifactId>
+  	  <version>0.0.1-SNAPSHOT</version>
+  	</dependency> 
+  </dependencies>
 </project>
