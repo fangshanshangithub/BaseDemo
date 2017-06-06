@@ -10,10 +10,13 @@
   <packaging>war</packaging>
   
   <dependencies>
-  	<dependency>
+  
+  	<!--  测试Spring classpath* 读取Extend-core.jar包 中的application-spring*.xml 属性文件  不推荐这么用，效率不高  -->
+<!--   	<dependency>
   	  <groupId>com.base.ssm.extends.core</groupId>
   	  <artifactId>Extend-core</artifactId>
   	  <version>0.0.1-SNAPSHOT</version>
-  	</dependency> 
+  	</dependency>  -->
+  	
   </dependencies>
 </project>
