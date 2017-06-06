@@ -1,5 +1,7 @@
 package com.cn.hnust.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,11 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public User getUserById(int userId) {
 		return userDao.selectByPrimaryKey(userId);
+	}
+
+	@Override
+	public List<User> getUserList() {
+		return userDao.selectAllList();
 	}
 
 }
