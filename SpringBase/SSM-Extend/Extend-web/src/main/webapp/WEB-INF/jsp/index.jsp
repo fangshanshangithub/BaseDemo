@@ -17,14 +17,16 @@
 			</tr>
 		</thead>
 		<tbody>
-			 <c:forEach var="user" items="${list}" >
+			 <c:forEach var="user" items="${list}" varStatus="status" >
                 <tr>
-                    <td>${user.userId }</td>
-                    <td>${user.userName }</td>
+                	
+                	<td>${status}</td>
+                    <td>${list.id}</td>
+                    <td>${list.userName}</td>
                     <td>
-                        <a href="<%=basePath %>user/${user.userId}/edit">编辑用户</a>
-                        <a href="<%=basePath %>user/${user.userId}">查看用户</a>
-                        <a href="javascript:void(0);" onclick="deleteUser(${user.userId })">删除该用户</a>
+                        <a href="<%=basePath %>user/${list.id}/edit">编辑用户</a>
+                        <a href="<%=basePath %>user/${list.id}">查看用户</a>
+                        <a href="javascript:void(0);" onclick="deleteUser(${list.id})">删除该用户</a>
                     </td>
                 </tr>
             </c:forEach>
