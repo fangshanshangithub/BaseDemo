@@ -3,8 +3,11 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-<title>测试</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<title>测试</title>
+	<link rel="stylesheet" type="text/css" href="resources/css/index.css" />
+
 </head>
 <body>
 	<table>
@@ -17,15 +20,15 @@
 			</tr>
 		</thead>
 		<tbody>
-			 <c:forEach var="user" items="${list}" varStatus="status" >
+			 <c:forEach var="list" items="${list}" varStatus="status" >
                 <tr>
                 	
-                	<td>${status}</td>
+                	<td>${status.count}</td>
                     <td>${list.id}</td>
                     <td>${list.userName}</td>
                     <td>
-                        <a href="<%=basePath %>user/${list.id}/edit">编辑用户</a>
-                        <a href="<%=basePath %>user/${list.id}">查看用户</a>
+                        <a href="user/${list.id}/edit">编辑用户</a>
+                        <a href="user/${list.id}">查看用户</a>
                         <a href="javascript:void(0);" onclick="deleteUser(${list.id})">删除该用户</a>
                     </td>
                 </tr>

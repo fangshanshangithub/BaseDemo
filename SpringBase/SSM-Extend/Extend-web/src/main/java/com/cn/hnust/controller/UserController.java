@@ -38,7 +38,7 @@ public class UserController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value="/", method=RequestMethod.GET)
+	@RequestMapping(method=RequestMethod.GET)
 	public String index(ModelMap model){
 		if (list == null) {
 			list = userService.getUserList();
