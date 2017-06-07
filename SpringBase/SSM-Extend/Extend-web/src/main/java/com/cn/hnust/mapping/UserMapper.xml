@@ -88,4 +88,13 @@
   		user_t
   </select>
   
+  
+    <select id="selectAllListRowBounds" resultMap="BaseResultMap" parameterType="org.apache.ibatis.session.RowBounds">
+  	select 
+  		<include refid="Base_Column_List"/>
+  	from 
+  		user_t
+  </select>
+  
+  
 </mapper>

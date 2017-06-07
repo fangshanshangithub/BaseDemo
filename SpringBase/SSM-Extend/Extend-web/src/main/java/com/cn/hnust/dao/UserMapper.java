@@ -2,6 +2,8 @@ package com.cn.hnust.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
+
 import com.cn.hnust.pojo.User;
 
 public interface UserMapper {
@@ -18,5 +20,7 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
     
     List<User> selectAllList();
+    
+    List<User> selectAllListRowBounds(RowBounds rowBounds);
     
 }

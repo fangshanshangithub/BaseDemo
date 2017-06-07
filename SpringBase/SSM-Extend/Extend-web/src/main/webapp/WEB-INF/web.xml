@@ -70,6 +70,16 @@
     </listener>
   	<!-- ***************log4j 日志相关配置 END***************  -->
     
+   <!-- 隐藏的HttpMethod方法过滤器，表单提交中需要携带一个name=_method的隐藏域，value=put或者delete -->
+    <filter>
+        <filter-name>HiddenHttpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>HiddenHttpMethodFilter</filter-name>
+        <servlet-name>SpringMVC</servlet-name>
+    </filter-mapping>
+    
     
     <!--  默认页面 -->
     <welcome-file-list>  
