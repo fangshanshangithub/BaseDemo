@@ -1,4 +1,4 @@
-package com.cn.hnust.controller;
+package com.cn.hnust.controller.restful;
 
 import java.util.List;
 
@@ -54,22 +54,33 @@ public class RestfulController extends BaseController {
 	
 	/**
 	 * 新增保存用户
-	 * POST方法 相当于 增加.
+	 * GET方法  跳转到add页面.
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="add")
+	public String add(){
+		return "restful/add";
+	}
+	
+	/**
+	 * 新增保存用户
+	 * POST方法  跳转到add页面.
 	 * @param model
 	 * @return
 	 */
 	@RequestMapping(value="add", method=RequestMethod.POST)
-	public String add(User user, ModelMap model){
-		if (user != null) {
-			userService.save(user);
-		}
+	public String addPost(User user, ModelMap model){
 		if (list == null) {
 			list = userService.getUserList();
 		}
-		list.add(user);
-		return "redirect:/user";
+		if (user != null) {
+			userService.save(user);
+			list.add(user);
+		}
+		model.addAttribute("list", list);
+		return "redirect:user/index";
 	}
-	
     /**
      * 查看用户详细信息
      * GET 方法相当于查询

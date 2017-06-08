@@ -9,8 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 
-
-@Controller
 public class BaseController {
 	
 	// 日志功能
@@ -25,7 +23,7 @@ public class BaseController {
 	    String webPath = request.getScheme() + "://" //返回的协议名称,默认是http
 	            + request.getServerName() //Web服务器名字
 	            + ":" + request.getServerPort() //服务器监听的端口
-	            + path + "/";
+	            + path;
 		
 	    model.addAttribute("webPath", webPath);
 	}
