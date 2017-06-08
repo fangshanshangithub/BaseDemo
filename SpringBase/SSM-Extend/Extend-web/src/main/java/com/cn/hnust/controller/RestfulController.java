@@ -14,16 +14,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.cn.hnust.controller.base.BaseController;
 import com.cn.hnust.pojo.User;
 import com.cn.hnust.service.IUserService;
 import com.github.pagehelper.PageInfo;
+/**
+ * restful 架构例子
+ * @author fangss
+ */
 
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class RestfulController extends BaseController {
 
 	// 日志功能
-	public static Logger logger = Logger.getLogger(UserController.class);
+	public static Logger logger = Logger.getLogger(RestfulController.class);
 	
 	@Autowired
 	private IUserService userService;
@@ -44,7 +49,7 @@ public class UserController {
 			list = userService.getUserList();
 		}
 		model.addAttribute("list", list);
-		return "index";
+		return "restful/index";
 	}
 	
 	/**
@@ -53,7 +58,7 @@ public class UserController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(method=RequestMethod.POST)
+	@RequestMapping(value="add", method=RequestMethod.POST)
 	public String add(User user, ModelMap model){
 		if (user != null) {
 			userService.save(user);
@@ -62,13 +67,14 @@ public class UserController {
 			list = userService.getUserList();
 		}
 		list.add(user);
-		return "index";
+		return "redirect:/user";
 	}
 	
     /**
      * 查看用户详细信息
+     * GET 方法相当于查询
      * @param id
-     * @return ModelAndView
+     * @return String
      */
     @RequestMapping(method=RequestMethod.GET,value="{id}")
     public String viewUser(@PathVariable("id")String id, ModelMap model){

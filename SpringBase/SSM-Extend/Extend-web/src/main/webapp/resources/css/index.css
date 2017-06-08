@@ -1,1 +1,14 @@
 th{color:red;}
+
+
+a {
+    border: 1px solid rgb(73, 58, 58);
+    background-color: rgb(133, 133, 133);
+    height: 50px;
+    line-height: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+}
