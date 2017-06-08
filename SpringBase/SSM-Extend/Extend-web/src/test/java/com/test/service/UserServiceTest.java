@@ -1,5 +1,7 @@
 package com.test.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
@@ -27,6 +29,15 @@ public class UserServiceTest extends TestBase{
         User user = userService.getUserById(1);  
         System.out.println(user.getUserName());  
         // logger.info("值："+user.getUserName());  
-        logger.info(JSON.toJSONString(user));  
+        System.out.println(JSON.toJSONString(user));  
     }  
+    
+    @Test  
+    public void test2() {  
+    	List<User> user = userService.getUserList();  
+        System.out.println(user.size());  
+        // logger.info("值："+user.getUserName());  
+        System.out.println(JSON.toJSONString(user));  
+    } 
+   
 }  

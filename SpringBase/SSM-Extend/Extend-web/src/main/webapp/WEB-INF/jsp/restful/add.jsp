@@ -12,16 +12,16 @@
         <form action="${webPath}/user/add" method="post">
             <table>
                 <tr>
-                    <th>用户age</th>
                     <th>用户名称</th>
                     <th>用户密码</th>
+                    <th>用户age</th>
                 </tr>
                 <tr>
-                    <td><input type="text" name="age" id="age" />
-                    </td>
                     <td><input type="text" name="userName" id="userName" />
                     </td>
                     <td><input type="password" name="password" id="password" />
+                    </td>
+                    <td><input type="text" name="age" id="age" />
                     </td>
                 </tr>
                 <tr>

@@ -18,7 +18,7 @@
                     <th>用户名称</th>
                 </tr>
                 <tr>
-                    <td><input type="text" name="userId" id="userId" value="${user.userId }" readonly="readonly"/>
+                    <td><input type="text" name="id" id="id" value="${user.id }" readonly="readonly"/>
                     </td>
                     <td><input type="text" name="userName" id="userName" value="${user.userName }"/>
                     </td>

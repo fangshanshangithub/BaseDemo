@@ -43,12 +43,14 @@ public class RestfulController extends BaseController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(method=RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public String index(ModelMap model){
 		if (list == null) {
 			list = userService.getUserList();
 		}
+		
 		model.addAttribute("list", list);
+		
 		return "restful/index";
 	}
 	
@@ -69,17 +71,24 @@ public class RestfulController extends BaseController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value="add", method=RequestMethod.POST)
+	@RequestMapping(value="add", method = RequestMethod.POST)
 	public String addPost(User user, ModelMap model){
-		if (list == null) {
-			list = userService.getUserList();
-		}
+		logger.info("******" + user.toString());
 		if (user != null) {
 			userService.save(user);
-			list.add(user);
 		}
-		model.addAttribute("list", list);
-		return "redirect:user/index";
+		/*
+		 * return "redirect:/user"
+		 * 正常跳转：但是浏览器URL显示有问题
+		 * 浏览器的地址：http://localhost:8080/Extend-web/user?webPath=http%3A%2F%2Flocalhost%3A8080%2FExtend-web
+		 * return "redirect:user" 
+		 * 报错了
+		 * 浏览器的地址：http://localhost:8080/Extend-web/user/user?webPath=http%3A%2F%2Flocalhost%3A8080%2FExtend-web
+		 * 
+		 * */
+		return "redirect:/user";
+		//return "forward:/user";
+		
 	}
     /**
      * 查看用户详细信息
@@ -87,11 +96,11 @@ public class RestfulController extends BaseController {
      * @param id
      * @return String
      */
-    @RequestMapping(method=RequestMethod.GET,value="{id}")
+    @RequestMapping(method = RequestMethod.GET,value = "{id}")
     public String viewUser(@PathVariable("id")String id, ModelMap model){
         User user = userService.getUserById(Integer.parseInt(id));
         model.addAttribute("user",user);
-        return "detail";
+        return "restful/view";
     }
      
     /**
@@ -99,10 +108,10 @@ public class RestfulController extends BaseController {
      * @param id
      */
     @ResponseBody
-    @RequestMapping(method=RequestMethod.DELETE,value="{id}")
+    @RequestMapping(method = RequestMethod.DELETE,value="{id}")
     public String deleteUser(@PathVariable("id")String id){
     	userService.delete(Integer.parseInt(id));
-        return "suc";
+        return "redirect:/user";
     }
      
     /**
@@ -111,13 +120,16 @@ public class RestfulController extends BaseController {
      * @return ModelAndView
      */
     @RequestMapping("{id}/edit")
-    public String toEdit(@PathVariable("id")String id){
-         
+    public String toEdit(@PathVariable("id")String id , ModelMap model){
+        /* 坑坑坑坑坑坑坑坑坑坑
+         * ModelMap model = new ModelMap();
+         * model.addAttribute("user",user);
+         * 无法把user 放到页面中，必须在 toEdit()中 制定
+         */
         User user = userService.getUserById(Integer.parseInt(id));
-        ModelMap model=new ModelMap();
         model.addAttribute("user",user);
          
-        return "edit";
+        return "restful/edit";
     }
      
     /**
@@ -128,7 +140,7 @@ public class RestfulController extends BaseController {
     @RequestMapping(method=RequestMethod.PUT)
     public String edit(User user){
     	userService.update(user);
-        return "redirect:/user/";
+        return "redirect:/user";
     }
      
 	

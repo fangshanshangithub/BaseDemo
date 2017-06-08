@@ -1,7 +1,7 @@
-function deleteUser(id){
+function deleteUser(webPath,id){
     $.ajax({
         type: 'delete',
-        url:'${webPath}user/'+id,
+        url: webPath + '/user/'+id,
         dataType:'text', 
         success:function(data){
             if(data=="suc"){

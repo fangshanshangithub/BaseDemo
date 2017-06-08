@@ -32,7 +32,7 @@
                     <td>
                         <a href="${webPath }/user/${list.id}/edit">编辑用户</a>
                         <a href="${webPath }/user/${list.id}">查看用户</a>
-                        <a href="javascript:void(0);" onclick="deleteUser(${list.id})">删除该用户</a>
+                        <a href="javascript:void(0);" onclick="deleteUser('${webPath}', '${list.id}')">删除该用户</a>
                     </td>
                 </tr>
             </c:forEach>

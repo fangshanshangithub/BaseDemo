@@ -7,6 +7,7 @@ import org.apache.ibatis.session.RowBounds;
 import com.cn.hnust.pojo.User;
 
 public interface UserMapper {
+	
     int deleteByPrimaryKey(Integer id);
 
     int insert(User record);
