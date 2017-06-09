@@ -1,6 +1,6 @@
 function deleteUser(webPath,id){
     $.ajax({
-        type: 'delete',
+        type: 'DELETE',
         url: webPath + '/user/'+id,
         dataType:'text', 
         success:function(data){

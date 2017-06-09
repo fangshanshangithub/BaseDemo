@@ -1,8 +1,12 @@
 package com.cn.hnust.controller.restful;
 
+import java.io.IOException;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.cn.hnust.controller.base.BaseController;
 import com.cn.hnust.pojo.User;
 import com.cn.hnust.service.IUserService;
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.github.pagehelper.PageInfo;
 /**
  * restful 架构例子
@@ -33,7 +38,7 @@ public class RestfulController extends BaseController {
 	@Autowired
 	private IUserService userService;
 
-	public List<User> list = null;
+	//public List<User> list = null;
 	
 	public PageInfo<User> userPage = null;
 	
@@ -45,10 +50,10 @@ public class RestfulController extends BaseController {
 	 */
 	@RequestMapping(method = RequestMethod.GET)
 	public String index(ModelMap model){
-		if (list == null) {
+		/*if (list == null) { // 这种写法会有一个bug，list只会保存第一次得到的数据
 			list = userService.getUserList();
-		}
-		
+		}*/
+		List<User> list = userService.getUserList();//该方法最好，可以随时看到最新的数据信息
 		model.addAttribute("list", list);
 		
 		return "restful/index";
@@ -72,7 +77,7 @@ public class RestfulController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value="add", method = RequestMethod.POST)
-	public String addPost(User user, ModelMap model){
+	public String addPost(User user, ModelMap model, HttpServletResponse response){
 		logger.info("******" + user.toString());
 		if (user != null) {
 			userService.save(user);
@@ -85,10 +90,18 @@ public class RestfulController extends BaseController {
 		 * 报错了
 		 * 浏览器的地址：http://localhost:8080/Extend-web/user/user?webPath=http%3A%2F%2Flocalhost%3A8080%2FExtend-web
 		 * 
+		 * ##　出现?webPath=.... 是因为继承了 BaseController,有一个前置操作设置webPath 
 		 * */
-		return "redirect:/user";
-		//return "forward:/user";
+		 for (Map.Entry<String, Object> entry : model.entrySet()) {
+			 System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
+		 }
+		 model.clear();
+		 logger.info("****** model 清空数据之后遍历结果 ******");
+		 for (Map.Entry<String, Object> entry : model.entrySet()) {
+			 System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
+		 }
 		
+		return "redirect:/user";
 	}
     /**
      * 查看用户详细信息
@@ -111,7 +124,7 @@ public class RestfulController extends BaseController {
     @RequestMapping(method = RequestMethod.DELETE,value="{id}")
     public String deleteUser(@PathVariable("id")String id){
     	userService.delete(Integer.parseInt(id));
-        return "redirect:/user";
+        return "suc";
     }
      
     /**
