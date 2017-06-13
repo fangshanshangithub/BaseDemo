@@ -16,7 +16,7 @@ public class BaseController {
 	// 日志功能
 	public static Logger logger = Logger.getLogger(BaseController.class);
  
-	 
+	   
 	@ModelAttribute
 	public void baseControllerInit(HttpServletRequest request, Model model) {
 		logger.info("******用户请求路径：" + request.getRequestURL() + "******;");
