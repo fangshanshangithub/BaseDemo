@@ -4,9 +4,11 @@ package com.cn.hnust.controller.base;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 
 public class BaseController {
@@ -28,7 +30,7 @@ public class BaseController {
 	    model.addAttribute("webPath", webPath);
 	}
 	
-	/*  1、request.getRequestURL()
+	/**  1、request.getRequestURL()
 		返回的是完整的url，包括Http协议，端口号，servlet名字和映射路径，但它不包含请求参数。
 		2、request.getRequestURI()
 		得到的是request URL的部分值，并且web容器没有decode过的
@@ -47,8 +49,9 @@ public class BaseController {
 		request.getContextPath()/CarsiLogCenter_new
 		request.getServletPath() /idpstat.jsp
 		request.getQueryString()action=idp.sptopn
-	 */
-	 
+	 **/
+	//@Autowired
+    //private RequestMappingHandlerMapping handlerMapping;
 	
 	
 }
