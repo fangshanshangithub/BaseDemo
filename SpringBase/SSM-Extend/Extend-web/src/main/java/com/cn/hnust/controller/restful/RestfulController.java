@@ -1,7 +1,5 @@
 package com.cn.hnust.controller.restful;
 
-import java.io.IOException;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,7 +19,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.cn.hnust.controller.base.BaseController;
 import com.cn.hnust.pojo.User;
 import com.cn.hnust.service.IUserService;
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.github.pagehelper.PageInfo;
 /**
  * restful 架构例子
