@@ -1,14 +1,32 @@
 package com.cn.hnust.controller.https;
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.context.ContextLoader;
+import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
+/**
+ * 获取url 请求中的信息
+ * @author FangSS
+ *
+ */
 @Controller
+@RequestMapping("/https")
 public class HeaderController {
-    @RequestMapping(value="/getHeader",method=RequestMethod.GET)
+	
+	//@Autowired
+    //private RequestMappingHandlerMapping handlerMapping;	
+	
+    @RequestMapping(value="getHeader",method=RequestMethod.GET)
     public ModelAndView getHeader(
             @RequestHeader("Host") String host,
             @RequestHeader("User-Agent") String userAgent,
@@ -32,4 +50,23 @@ public class HeaderController {
         mav.setViewName("htts/result");  //返回值是个字符串，就是视图名
         return mav;
     }
+    
+    @RequestMapping("/URLInfo")
+    public String URLInfo(HttpServletRequest request, ModelMap map) {
+    	//ApplicationContext applicationContext = (ApplicationContext) request.getSession().getServletContext();
+    	
+    	//RequestMappingHandlerMapping handlerMapping = (RequestMappingHandlerMapping) applicationContext.getBean("requestMappingHandlerMapping");
+    	//System.out.println(handlerMapping == null);
+    	
+    	WebApplicationContext webApplicationContext = ContextLoader.getCurrentWebApplicationContext();
+    	RequestMappingHandlerMapping handlerMapping = webApplicationContextgetBean("requestMappingHandlerMapping");
+    	System.out.println(handlerMapping == null);
+    	return "htts/urlInfo";
+    }
+
+	private RequestMappingHandlerMapping webApplicationContextgetBean(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+    
 }
