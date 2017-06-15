@@ -53,20 +53,6 @@ public class HeaderController {
     
     @RequestMapping("/URLInfo")
     public String URLInfo(HttpServletRequest request, ModelMap map) {
-    	//ApplicationContext applicationContext = (ApplicationContext) request.getSession().getServletContext();
-    	
-    	//RequestMappingHandlerMapping handlerMapping = (RequestMappingHandlerMapping) applicationContext.getBean("requestMappingHandlerMapping");
-    	//System.out.println(handlerMapping == null);
-    	
-    	WebApplicationContext webApplicationContext = ContextLoader.getCurrentWebApplicationContext();
-    	RequestMappingHandlerMapping handlerMapping = webApplicationContextgetBean("requestMappingHandlerMapping");
-    	System.out.println(handlerMapping == null);
     	return "htts/urlInfo";
     }
-
-	private RequestMappingHandlerMapping webApplicationContextgetBean(String string) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-    
 }
