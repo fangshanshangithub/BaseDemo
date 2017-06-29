@@ -8,6 +8,8 @@
   	<module>JavaBase</module>
   	<module>SpringBase</module>
   	<module>HadoopBase</module>
+  	<module>common-untils</module>
+  	<module>CommonUntils</module>
   </modules>
 
 

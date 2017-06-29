@@ -7,11 +7,11 @@ public class RedisJava {
 	public static void main(String[] args) {
 		Jedis jedis = getJedis();
 		
-		redisSetGet(jedis);
+		redisSetGet(jedis); // set get 方法
 		
-		redisAppend(jedis);
+		redisAppend(jedis); // append 
 		
-		redisDel(jedis);
+		redisDel(jedis); //删除
 		
 		
 	}
@@ -25,14 +25,21 @@ public class RedisJava {
 		String returnflag = jedis.set("f", "sssssssssss");
 		if ("OK".equals(returnflag)) {
 			System.out.println("删除之前的value值为：" + jedis.get("f"));
-			
 		}
+		else {
+			System.out.println("*** setValue 失败");
+		}
+		Long i = jedis.del("f");
+		System.out.println("***del 操作之后的返回值：" + i + ";");
+		
+		
 		
 	}
 	
 	/**
 	 * append(key, value)方法，在key的value 拼接字符串.
 	 * 成功返回 key拼接之后字符串的字节数【Long类型返回值】
+	 * 注：当不存在对应的key时，append() 相当于set() 方法，返回值为append(value)的value字节数
 	 * @param jedis
 	 */
 	private static void redisAppend(Jedis jedis) {
