@@ -7,18 +7,24 @@ public class RedisJava {
 	public static void main(String[] args) {
 		Jedis jedis = getJedis();
 		
-		
-		redisSetGet(jedis);
-		
+		//redisSetGet(jedis);
 		
 		redisAppend(jedis);
 		
 		
 	}
-
+	
+	  
+	/**
+	 * redis append(key, value)方法.
+	 * 成功：返回 对应key对应的value的长度；
+	 * 失败：
+	 * @param jedis
+	 */
 	private static void redisAppend(Jedis jedis) {
 		System.out.println("================redis Append 拼接value=========================");
-		Long flag = jedis.append("ff", "FFFFFFFFFFFFFF"); //拼接
+		//System.out.println("append方法执行之前:key对应的value值:" + jedis.get("ff") + "; 对应的长度:" + jedis.get("ff").length());
+		Long flag = jedis.append("ff", "FFF方杉杉"); //拼接
 		System.out.println("redis append方法执行之后value的长度:" + jedis.get("ff").length());
 		System.out.println("redis append方法调用之后value值变为:" + jedis.get("ff") + "; append方法返回值:" + flag + ";");
 		
