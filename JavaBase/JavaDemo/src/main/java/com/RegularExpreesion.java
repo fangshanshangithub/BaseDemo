@@ -1,5 +1,6 @@
 package com;
 
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -30,14 +31,30 @@ import java.util.regex.Pattern;
  */
 public class RegularExpreesion {
 
+	public static final String NUM_CHAR = "^[a-zA-Z0-9\u4E00-\u9FA5]+$"; //字母,数字正则表达式
+	
 	public static void main(String[] args) {
-		Pattern pattern = null;
-		// ( // 反斜杠   )
-		method_01("24324//sfd\\sf//sfd\\sf/ds", pattern);
-		
+		while(true) {
+			Pattern pattern = null;
+			// ( // 反斜杠   )
+			//method_01("24324//sfd\\sf//sfd\\sf/ds", pattern);
+			numChar(pattern);
+
+		}
 
 	}
 	
+	private static void numChar(Pattern pattern) {
+		Scanner scanner = new Scanner(System.in);
+		String value = scanner.nextLine();
+		System.out.println("*** 输入的value值为：" + value + " ***");
+		pattern = Pattern.compile(NUM_CHAR);
+		Matcher matcher = pattern.matcher(value);
+		boolean falg = matcher.matches();
+		System.out.println(falg);
+		
+	}
+
 	/**
 	 *  // 反斜杠   
 	 */
